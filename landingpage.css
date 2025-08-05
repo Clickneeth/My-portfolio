@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff000;
+  font-family: Arial, sans-serif;
+}
+.comic-container {
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 6px solid #111;
+  background: #fff;
+  box-shadow: 0 10px 30px #3338;
+}
+.comic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 280px 280px;
+  gap: 12px;
+  padding: 24px;
+  background: repeating-linear-gradient(
+    135deg,
+    #FFF 0 10px,
+    #FFEF50 10px 20px
+  );
+}
+.comic-panel {
+  position: relative;
+  border: 5px solid #111;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f9f9f9;
+  box-shadow: 4px 4px 0 #e71651;
+  display: flex;
+  align-items: flex-end;
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  color: #111;
+  justify-content: center;
+  min-height: 170px;
+}
+.comic-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.2) saturate(1.6);
+}
+.bubble {
+  position: absolute;
+  left: 14px;
+  top: 16px;
+  max-width: 80%;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 30px 30px 30px 8px;
+  padding: 8px 18px;
+  font-family: 'Bangers', cursive;
+  font-size: 1.3em;
+  box-shadow: 2px 2px 0 #1117;
+}
+header {
+  width: 100%;
+  text-align: center;
+  background: #111;
+  color: #ffef50;
+  padding: 24px 0 8px 0;
+  font-family: 'Bangers', cursive;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  border-bottom: 7px solid #e71651;
+}
+.journey-btn {
+  display: block;
+  margin: 34px auto 24px;
+  padding: 16px 38px;
+  background: linear-gradient(90deg, #e71651, #ffef50);
+  color: #111;
+  font-family: 'Bangers', cursive;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 29px;
+  box-shadow: 2px 4px 0 #1117;
+  cursor: pointer;
+  transition: background 0.23s;
+}
+.journey-btn:hover {
+  background: linear-gradient(90deg, #ffef50, #e71651);
+  color: #fff;
+}
