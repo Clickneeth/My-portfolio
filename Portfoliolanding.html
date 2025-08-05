@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    MY portfolio
+  </header>
+  <div id="view-section" style="padding:10px; text-align:center;">
+    <span style="font-size:1.2em; font-family:'Bangers', cursive;">
+      Welcome to my comic-style portfolio!
+    </span>
+    <br>
+    <label for="visitor-name" style="font-family:'Bangers', cursive;font-size:1.1em;">
+      Want to let me know your name? (optional)
+    </label>
+    <input type="text" id="visitor-name" placeholder="Your name (optional)" style="margin:7px 4px 0 4px; border-radius:10px; border:2px solid #111; padding:4px; font-family:'Bangers', cursive;">
+    <button onclick="submitNameForm()" style="border-radius:10px; border:none; background:#e71651; color:#fff; font-weight:bold; font-family:'Bangers', cursive; padding:5px 15px; margin-left:7px; cursor:pointer;">
+      Submit
+    </button>
+    <div id="thank-you-msg" style="margin-top:10px;color:#00840b;font-family:'Bangers', cursive;"></div>
+    <form id="hidden-google-form" action="YOUR_GOOGLE_FORM_ACTION_URL" method="POST" target="hidden_iframe" style="display:none;">
+      <input type="text" name="entry.YOUR_ENTRY_ID" id="hidden-visitor-name">
+      <input type="submit">
+    </form>
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+  </div>
+
+  <div class="comic-container">
+    <div class="comic-grid">
+      <!-- PANEL 1: Camera Closeup -->
+      <div class="comic-panel" style="background:#FFDAE6;">
+        <img src="camera-photo.jpg" alt="Camera closeup">
+        <div class="bubble">Ready to capture the world!</div>
+      </div>
+      <!-- PANEL 2: You Holding Camera -->
+      <div class="comic-panel" style="background:#C3F8FF;">
+        <img src="your-holding-camera.jpg" alt="Photographer holding camera">
+        <div class="bubble">Meet the photographer!</div>
+      </div>
+      <!-- PANEL 3: Action Shot -->
+      <div class="comic-panel" style="background:#FFFDBB;">
+        <img src="your-action-shot.jpg" alt="Photographer in action">
+        <div class="bubble">In the zone... Click!</div>
+      </div>
+      <!-- PANEL 4: Deer Photo -->
+      <div class="comic-panel" style="background:#D7D2FF;">
+        <img src="deer-photo.jpg" alt="Deer first photo">
+        <div class="bubble">Where my journey began.</div>
+      </div>
+    </div>
+    <button class="journey-btn" onclick="goToJourney()">Wanna see my journey as a photographer?</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
