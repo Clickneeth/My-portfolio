@@ -104,7 +104,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Placeholder for journey button click function
 function goToJourney() {
-  alert("Next: Your photography journey page will go here.");
+  window.location.href = "choicepage.html";
 }
 
 
