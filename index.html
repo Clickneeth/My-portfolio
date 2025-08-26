@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>MY portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="landingpage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="landingpage.css" />
+  <style>
+    /* Inline CSS for multilingual button span styles */
+    #multilingual-btn span {
+      display: inline-block;
+      transition: color 0.2s, transform 0.2s;
+      font-family: 'Bangers', cursive;
+      font-weight: bold;
+      margin: 0 1px;
+      cursor: pointer;
+    }
+    #multilingual-btn:hover span {
+      color: #ff1654;
+      transform: scale(1.15) rotate(-6deg);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -14,18 +29,32 @@
     <span style="font-size:1.2em; font-family:'Bangers', cursive;">
       Welcome to my comic-style portfolio!
     </span>
-    <br>
-    <label for="visitor-name" style="font-family:'Bangers', cursive;font-size:1.1em;">
+    <br />
+    <label for="visitor-name" style="font-family:'Bangers', cursive; font-size:1.1em;">
       Want to let me know your name? (optional)
     </label>
-    <input type="text" id="visitor-name" placeholder="Your name (optional)" style="margin:7px 4px 0 4px; border-radius:10px; border:2px solid #111; padding:4px; font-family:'Bangers', cursive;">
-    <button onclick="submitNameForm()" style="border-radius:10px; border:none; background:#e71651; color:#fff; font-weight:bold; font-family:'Bangers', cursive; padding:5px 15px; margin-left:7px; cursor:pointer;">
+    <input
+      type="text"
+      id="visitor-name"
+      placeholder="Your name (optional)"
+      style="margin:7px 4px 0 4px; border-radius:10px; border:2px solid #111; padding:4px; font-family:'Bangers', cursive;"
+    />
+    <button
+      onclick="submitNameForm()"
+      style="border-radius:10px; border:none; background:#e71651; color:#fff; font-weight:bold; font-family:'Bangers', cursive; padding:5px 15px; margin-left:7px; cursor:pointer;"
+    >
       Submit
     </button>
-    <div id="thank-you-msg" style="margin-top:10px;color:#00840b;font-family:'Bangers', cursive;"></div>
-    <form id="hidden-google-form" action="YOUR_GOOGLE_FORM_ACTION_URL" method="POST" target="hidden_iframe" style="display:none;">
-      <input type="text" name="entry.YOUR_ENTRY_ID" id="hidden-visitor-name">
-      <input type="submit">
+    <div id="thank-you-msg" style="margin-top:10px; color:#00840b; font-family:'Bangers', cursive;"></div>
+    <form
+      id="hidden-google-form"
+      action="YOUR_GOOGLE_FORM_ACTION_URL"
+      method="POST"
+      target="hidden_iframe"
+      style="display:none;"
+    >
+      <input type="text" name="entry.YOUR_ENTRY_ID" id="hidden-visitor-name" />
+      <input type="submit" />
     </form>
     <iframe name="hidden_iframe" style="display:none;"></iframe>
   </div>
@@ -34,28 +63,110 @@
     <div class="comic-grid">
       <!-- PANEL 1: Camera Closeup -->
       <div class="comic-panel" style="background:#FFDAE6;">
-        <img src="camera-photo.jpg" alt="Camera closeup">
+        <img src="camera-photo.jpg" alt="Camera closeup" />
         <div class="bubble">Ready to capture the world!</div>
       </div>
       <!-- PANEL 2: You Holding Camera -->
       <div class="comic-panel" style="background:#C3F8FF;">
-        <img src="your-holding-camera.jpg" alt="Photographer holding camera">
+        <img src="your-holding-camera.jpg" alt="Photographer holding camera" />
         <div class="bubble">Meet the photographer!</div>
       </div>
       <!-- PANEL 3: Action Shot -->
       <div class="comic-panel" style="background:#FFFDBB;">
-        <img src="your-action-shot.jpg" alt="Photographer in action">
+        <img src="your-action-shot.jpg" alt="Photographer in action" />
         <div class="bubble">In the zone... Click!</div>
       </div>
       <!-- PANEL 4: Deer Photo -->
       <div class="comic-panel" style="background:#D7D2FF;">
-        <img src="deer-photo.jpg" alt="Deer first photo">
+        <img src="deer-photo.jpg" alt="Deer first photo" />
         <div class="bubble">Where my journey began.</div>
       </div>
     </div>
-    <button class="journey-btn" onclick="goToJourney()">Wanna see my journey as a photographer?</button>
+    <button id="multilingual-btn" class="journey-btn" onclick="goToJourney()">
+      <span>W</span><span>a</span><span>n</span><span>n</span><span>a</span><span> </span><span>s</span><span>e</span><span>e</span><span> </span><span>m</span><span>y</span><span> </span><span>j</span><span>o</span><span>u</span><span>r</span><span>n</span><span>e</span><span>y</span><span> </span><span>a</span><span>s</span><span> </span><span>a</span><span> </span><span>p</span><span>h</span><span>o</span><span>t</span><span>o</span><span>g</span><span>r</span><span>a</span><span>p</span><span>h</span><span>e</span><span>r</span><span>?</span>
+    </button>
   </div>
+
   <script src="landingpage.js"></script>
+  <script>
+    // Multilingual rolling letters on button
+    const languagesMap = [
+      ["W", "Ｗ", "ウ", "维", "V", "Β", "व", "వ", "வ", "ವ", "𑢾", "墨西哥的"],
+      ["a", "ａ", "ア", "啊", "A", "Α", "अ", "అ", "அ", "ಅ", "𑢱", "啊"],
+      ["n", "ｎ", "ン", "恩", "N", "Ν", "न", "న", "ந", "ನ", "𑢨", "恩"],
+      ["n", "ｎ", "ン", "恩", "N", "Ν", "न", "న", "ந", "ನ", "𑢨", "恩"],
+      ["a", "ａ", "ア", "啊", "A", "Α", "अ", "అ", "அ", "ಅ", "𑢱", "啊"],
+      [" ", "　", "　", "　", " ", " ", " ", " ", " ", " ", " ", " "],
+      ["s", "ｓ", "ス", "斯", "S", "Σ", "स", "స", "ச", "ಸ", "𑢴", "斯"],
+      ["e", "ｅ", "エ", "伊", "E", "Ε", "ए", "ఎ", "எ", "ಎ", "𑢷", "伊"],
+      ["e", "ｅ", "エ", "伊", "E", "Ε", "ए", "ఎ", "எ", "ಎ", "𑢷", "伊"],
+      [" ", "　", "　", "　", " ", " ", " ", " ", " ", " ", " ", " "],
+      ["m", "ｍ", "ム", "姆", "M", "Μ", "म", "म", "ம", "ಮ", "𑢰", "姆"],
+      ["y", "ｙ", "イ", "伊", "Y", "Υ", "य", "య", "ய", "ಯ", "𑢹", "伊"],
+      [" ", "　", "　", "　", " ", " ", " ", " ", " ", " ", " ", " "],
+      ["j", "ｊ", "ジ", "杰", "J", "Ξ", "ज", "జ", "ஜ", "ಜ", "𑢽", "杰"],
+      ["o", "ｏ", "オ", "欧", "O", "Ο", "ओ", "ఒ", "ஒ", "ಒ", "𑢬", "欧"],
+      ["u", "ｕ", "ウ", "宇", "U", "Υ", "उ", "ఉ", "உ", "ಉ", "𑢤", "宇"],
+      ["r", "ｒ", "ル", "尔", "R", "Ρ", "र", "ర", "ர", "ರ", "𑢷", "尔"],
+      ["n", "ｎ", "ン", "恩", "N", "Ν", "न", "న", "ந", "ನ", "𑢨", "恩"],
+      ["e", "ｅ", "エ", "伊", "E", "Ε", "ए", "ఎ", "எ", "ಎ", "𑢷", "伊"],
+      ["y", "ｙ", "イ", "伊", "Y", "Υ", "य", "య", "ய", "ಯ", "𑢹", "伊"],
+      [" ", "　", "　", "　", " ", " ", " ", " ", " ", " ", " ", " "],
+      ["a", "ａ", "ア", "啊", "A", "Α", "अ", "అ", "அ", "ಅ", "𑢱", "啊"],
+      ["s", "ｓ", "ス", "斯", "S", "Σ", "स", "స", "ச", "ಸ", "𑢴", "斯"],
+      [" ", "　", "　", "　", " ", " ", " ", " ", " ", " ", " ", " "],
+      ["a", "ａ", "ア", "啊", "A", "Α", "अ", "అ", "அ", "ಅ", "𑢱", "啊"],
+      [" ", "　", "　", "　", " ", " ", " ", " ", " ", " ", " ", " "],
+      ["p", "ｐ", "プ", "普", "P", "Π", "प", "ప", "ப", "ಪ", "𑢲", "普"],
+      ["h", "ｈ", "フ", "哈", "H", "Η", "ह", "హ", "ஹ", "ಹ", "𑢶", "哈"],
+      ["o", "ｏ", "オ", "欧", "O", "Ο", "ओ", "ఒ", "ஒ", "ಒ", "𑢬", "欧"],
+      ["t", "ｔ", "ト", "特", "T", "Τ", "त", "త", "த", "ತ", "𑢸", "特"],
+      ["o", "ｏ", "オ", "欧", "O", "Ο", "ओ", "ఒ", "ஒ", "ಒ", "𑢬", "欧"],
+      ["g", "ｇ", "グ", "古", "G", "Γ", "ग", "గ", "க", "ಗ", "𑢵", "古"],
+      ["r", "ｒ", "ル", "尔", "R", "Ρ", "र", "ర", "ர", "ರ", "𑢷", "尔"],
+      ["a", "ａ", "ア", "啊", "A", "Α", "अ", "అ", "அ", "ಅ", "𑢱", "啊"],
+      ["p", "ｐ", "プ", "普", "P", "Π", "प", "ప", "ப", "ಪ", "𑢲", "普"],
+      ["h", "ｈ", "フ", "哈", "H", "Η", "ह", "హ", "ஹ", "ಹ", "𑢶", "哈"],
+      ["e", "ｅ", "エ", "伊", "E", "Ε", "ए", "ఎ", "எ", "ಎ", "𑢷", "伊"],
+      ["r", "ｒ", "ル", "尔", "R", "Ρ", "र", "ర", "ர", "ರ", "𑢷", "尔"],
+      ["?", "？", "？", "？", "?", "?", "?", "?", "?", "?", "?", "?"]
+    ];
+
+    const button = document.getElementById('multilingual-btn');
+    const spans = button.querySelectorAll('span');
+    let intervalIds = [];
+
+    spans.forEach((span, i) => {
+      let langIndex = 0;
+      let paused = false;
+
+      span.addEventListener('mouseenter', () => {
+        if (paused) return;
+        intervalIds[i] = setInterval(() => {
+          langIndex = (langIndex + 1) % languagesMap[i].length;
+          span.textContent = languagesMap[i][langIndex];
+        }, 200);
+      });
+
+      span.addEventListener('mouseleave', () => {
+        if (!paused) {
+          clearInterval(intervalIds[i]);
+          span.textContent = languagesMap[i][0]; // Reset to base Latin
+        }
+      });
+
+      span.addEventListener('click', () => {
+        paused = !paused;
+        if (paused) {
+          clearInterval(intervalIds[i]);
+        } else {
+          langIndex = 0;
+          span.textContent = languagesMap[i][0];
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+
 
