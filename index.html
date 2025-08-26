@@ -9,27 +9,32 @@
 </head>
 <body>
   <header>
-    MY portfolio
+    MY PORTFOLIO
   </header>
 
-  <div class="comic-magazine-grid">
-    <div class="comic-panel" id="panel1">
-      <img src="photo1.jpg" alt="Photo 1" />
+  <div class="comic-container">
+    <div class="comic-grid">
+      <div class="comic-panel pink">
+        <div class="panel-title">CAMERA CLOSEUP</div>
+        <div class="bubble">READY TO CAPTURE THE WORLD!</div>
+      </div>
+      <div class="comic-panel blue">
+        <div class="panel-title">PHOTOGRAPHER HOLDING CAMERA</div>
+        <div class="bubble">MEET THE PHOTOGRAPHER!</div>
+      </div>
+      <div class="comic-panel yellow">
+        <div class="panel-title">PHOTOGRAPHER IN ACTION</div>
+        <div class="bubble">IN THE ZONE... CLICK!</div>
+      </div>
+      <div class="comic-panel purple">
+        <div class="panel-title">DEER FIRST PHOTO</div>
+        <div class="bubble">WHERE MY JOURNEY BEGAN.</div>
+      </div>
     </div>
-    <div class="comic-panel" id="panel2">
-      <img src="photo2.jpg" alt="Photo 2" />
-    </div>
-    <div class="comic-panel" id="panel3">
-      <img src="photo3.jpg" alt="Photo 3" />
-    </div>
-    <div class="comic-panel" id="panel4">
-      <img src="photo4.jpg" alt="Photo 4" />
-    </div>
+    <button id="journey-btn" class="journey-btn" onclick="goToJourney()">
+      WANNA SEE MY JOURNEY AS A PHOTOGRAPHER?
+    </button>
   </div>
-
-  <button id="multilingual-btn" class="journey-btn" onclick="goToJourney()">
-    Wanna see my journey as a photographer?
-  </button>
 
   <script src="landingpage.js"></script>
 </body>
