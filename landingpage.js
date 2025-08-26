@@ -1,27 +1,28 @@
-// Visitor count using CountAPI
+// Visitor counter using CountAPI
 fetch('https://api.countapi.xyz/hit/yourphotolanding/visitor')
   .then(res => res.json())
   .then(data => {
-    // console.log("Visitor count incremented to", data.value);
+    // console.log("Visitor count incremented:", data.value);
   });
 
-// Google Form submission
+// Google Form submission function
 function submitNameForm() {
   let name = document.getElementById('visitor-name').value.trim();
   if (!name) name = "";
   document.getElementById('hidden-visitor-name').value = name;
   document.getElementById('hidden-google-form').submit();
-  document.getElementById('thank-you-msg').innerText = name.length > 0 ?
-    `Thank you for visiting, ${name}!` : `Thank you for visiting!`;
+  document.getElementById('thank-you-msg').innerText = name.length > 0
+    ? `Thank you for visiting, ${name}!`
+    : `Thank you for visiting!`;
   document.getElementById('visitor-name').value = '';
 }
 
-// Button journey stub
+// Placeholder function for journey button
 function goToJourney() {
   alert("Next: Your photography journey page will go here.");
 }
 
-// Multilingual rolling letters on button
+// Multilingual rolling letters animation on button - all letters change simultaneously on hover
 const languagesMap = [
   ["W", "Ｗ", "ウ", "维", "V", "Β", "व", "వ", "வ", "ವ", "𑢾", "墨西哥的"],
   ["a", "ａ", "ア", "啊", "A", "Α", "अ", "అ", "அ", "ಅ", "𑢱", "啊"],
@@ -42,7 +43,7 @@ const languagesMap = [
   ["r", "ｒ", "ル", "尔", "R", "Ρ", "र", "ర", "ர", "ರ", "𑢷", "尔"],
   ["n", "ｎ", "ン", "恩", "N", "Ν", "न", "న", "ந", "ನ", "𑢨", "恩"],
   ["e", "ｅ", "エ", "伊", "E", "Ε", "ए", "ఎ", "எ", "ಎ", "𑢷", "伊"],
-  ["y", "ｙ", "イ", "伊", "Y", "Υ", "य", "య", "ய", "ಯ", "𑢹", "伊"],
+  ["y", "ｙ", "イ", "伊", "Y", "Υ", "य","య", "ய", "ಯ", "𑢹", "伊"],
   [" ", "　", "　", "　", " ", " ", " ", " ", " ", " ", " ", " "],
   ["a", "ａ", "ア", "啊", "A", "Α", "अ", "అ", "அ", "ಅ", "𑢱", "啊"],
   ["s", "ｓ", "ス", "斯", "S", "Σ", "स", "స", "ச", "ಸ", "𑢴", "斯"],
@@ -66,34 +67,51 @@ const languagesMap = [
 
 const button = document.getElementById('multilingual-btn');
 const spans = button.querySelectorAll('span');
-let intervalIds = [];
+let intervalId;
+let langIndex = 0;
+let paused = false;
 
-spans.forEach((span, i) => {
-  let langIndex = 0;
-  let paused = false;
-
-  span.addEventListener('mouseenter', () => {
-    if (paused) return;
-    intervalIds[i] = setInterval(() => {
-      langIndex = (langIndex + 1) % languagesMap[i].length;
+button.addEventListener('mouseenter', () => {
+  if (paused) return;
+  intervalId = setInterval(() => {
+    langIndex = (langIndex + 1) % languagesMap[0].length;
+    spans.forEach((span, i) => {
       span.textContent = languagesMap[i][langIndex];
-    }, 200);
-  });
-
-  span.addEventListener('mouseleave', () => {
-    if (!paused) {
-      clearInterval(intervalIds[i]);
-      span.textContent = languagesMap[i][0]; // Reset to Latin base
-    }
-  });
-
-  span.addEventListener('click', () => {
-    paused = !paused;
-    if (paused) {
-      clearInterval(intervalIds[i]);
-    } else {
-      langIndex = 0;
-      span.textContent = languagesMap[i][0];
-    }
-  });
+    });
+  }, 200);
 });
+
+button.addEventListener('mouseleave', () => {
+  if (!paused) {
+    clearInterval(intervalId);
+    spans.forEach((span, i) => {
+      span.textContent = languagesMap[i][0];
+    });
+  }
+});
+
+button.addEventListener('click', () => {
+  paused = !paused;
+  if (paused) {
+    clearInterval(intervalId);
+  } else {
+    langIndex = 0;
+    spans.forEach((span, i) => {
+      span.textContent = languagesMap[i][0];
+    });
+  }
+});
+
+// For mobile touch support toggle
+button.addEventListener('touchstart', () => {
+  paused = !paused;
+  if (paused) {
+    clearInterval(intervalId);
+  } else {
+    langIndex = 0;
+    spans.forEach((span, i) => {
+      span.textContent = languagesMap[i][0];
+    });
+  }
+});
+
