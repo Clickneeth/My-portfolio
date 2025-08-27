@@ -144,25 +144,30 @@
     }
 
     // On click handler
-    function onOptionClick(option) {
-      portraitsBtn.disabled = true;
-      landscapesBtn.disabled = true;
+function onOptionClick(option) {
+  portraitsBtn.disabled = true;
+  landscapesBtn.disabled = true;
+  bufferText.style.visibility = 'visible';
 
-      bufferText.style.visibility = 'visible';
-
-      // Wait 2 seconds to simulate loading/buffering
+  setTimeout(() => {
+    bufferText.style.visibility = 'hidden';
+    if (option === 'portraits') {
+      clearInterval(landscapesBtn._intervalId);
+      animateButtonLetters(portraitsBtn, languagesMapPortraits);
+      // Navigate to exact file after animation
       setTimeout(() => {
-        bufferText.style.visibility = 'hidden';
-
-        if (option === 'portraits') {
-          clearInterval(landscapesBtn._intervalId);
-          animateButtonLetters(portraitsBtn, languagesMapPortraits);
-        } else {
-          clearInterval(portraitsBtn._intervalId);
-          animateButtonLetters(landscapesBtn, languagesMapLandscapes);
-        }
-      }, 2000);
+        window.location.href = "Portrats.html"; // filename from your repo screenshot (note the spelling)
+      }, 1200);
+    } else {
+      clearInterval(portraitsBtn._intervalId);
+      animateButtonLetters(landscapesBtn, languagesMapLandscapes);
+      setTimeout(() => {
+        window.location.href = "Landscape.html"; // filename exact match from repo
+      }, 1200);
     }
+  }, 2000);
+}
+
 
     portraitsBtn.addEventListener('click', () => onOptionClick('portraits'));
     landscapesBtn.addEventListener('click', () => onOptionClick('landscapes'));
