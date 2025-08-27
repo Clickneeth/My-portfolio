@@ -14,7 +14,7 @@ const languagesMapPortraits = [
   ["o", "ｏ", "オ", "欧", "O", "Ο", "ओ", "ఒ", "ஒ", "ಒ", "𑢬", "欧"],
   ["r", "ｒ", "ル", "尔", "R", "Ρ", "र", "ర", "ர", "ರ", "𑢷", "尔"],
   ["t", "ｔ", "ト", "特", "T", "Τ", "त", "త", "த", "ತ", "𑢸", "特"],
-  ["r", "ｒ", "ル", "尔", "R", "Ρ", "र", "र", "ர", "ರ", "𑢷", "尔"],
+  ["r", "ｒ", "ル", "尔", "R", "Ρ", "र", "ర", "ர", "ರ", "𑢷", "尔"],
   ["a", "ａ", "ア", "啊", "A", "Α", "अ", "అ", "அ", "ಅ", "𑢱", "啊"],
   ["i", "ｉ", "イ", "伊", "I", "Ι", "इ", "ఇ", "இ", "ಇ", "𑢴", "伊"],
   ["t", "ｔ", "ト", "特", "T", "Τ", "त", "త", "த", "ತ", "𑢸", "特"],
@@ -66,9 +66,16 @@ function onOptionClick(option) {
     if (option === 'portraits') {
       clearInterval(landscapesBtn._intervalId);
       animateButtonLetters(portraitsBtn, languagesMapPortraits);
+      // Navigate to exact file after animation
+      setTimeout(() => {
+        window.location.href = "Portrats.html"; // filename from your repo screenshot (note the spelling)
+      }, 1200);
     } else {
       clearInterval(portraitsBtn._intervalId);
       animateButtonLetters(landscapesBtn, languagesMapLandscapes);
+      setTimeout(() => {
+        window.location.href = "Landscape.html"; // filename exact match from repo
+      }, 1200);
     }
   }, 2000);
 }
