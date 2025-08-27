@@ -100,12 +100,16 @@ header {
   border-radius: 29px;
   box-shadow: 2px 4px 0 #1117;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  letter-spacing: 2px;
 }
+
 
 .journey-btn:hover {
   background: #e71651;
   color: #ffef50;
+  box-shadow: 4px 8px 0 #e7165182;
+  transform: scale(1.04);
 }
 
 @media (max-width: 768px) {
