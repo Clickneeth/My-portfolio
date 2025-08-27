@@ -1,16 +1,16 @@
-// Wrap each letter in the button text dynamically inside spans
+// Full multilingual cycling button script
 window.addEventListener('DOMContentLoaded', () => {
   const button = document.getElementById('multilingual-btn');
   const text = button.textContent;
   button.textContent = '';
 
+  // Wrap each letter in a span for per-letter animation
   text.split('').forEach(char => {
     const span = document.createElement('span');
     span.textContent = char;
     button.appendChild(span);
   });
 
-  // Multilingual rolling text animation
   const languagesMap = [
     ["W", "Ｗ", "ウ", "维", "V", "Β", "व", "వ", "வ", "ವ", "𑢾", "墨西哥的"],
     ["a", "ａ", "ア", "啊", "A", "Α", "अ", "అ", "அ", "ಅ", "𑢱", "啊"],
@@ -102,9 +102,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Placeholder for journey button click function
+// Example navigation function (optional)
 function goToJourney() {
   window.location.href = "choicepage.html";
 }
-
-
