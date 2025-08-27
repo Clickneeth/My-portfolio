@@ -48,6 +48,8 @@ header {
   align-items: flex-start;
   justify-content: flex-end;
   padding: 18px;
+       background-size: cover;
+
 }
 
 .pink {
