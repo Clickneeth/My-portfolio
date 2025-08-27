@@ -1,17 +1,23 @@
-// Full multilingual cycling button script
-window.addEventListener('DOMContentLoaded', () => {
-  const button = document.getElementById('multilingual-btn');
-  const text = button.textContent;
+document.addEventListener('DOMContentLoaded', () => {
+  const button = document.getElementById('journey-btn'); // Use correct button id
+  if (!button) {
+    console.error('Button with id "journey-btn" not found!');
+    return;
+  }
+
+  const originalText = button.textContent;
   button.textContent = '';
 
-  // Wrap each letter in a span for per-letter animation
-  text.split('').forEach(char => {
+  // Wrap each letter inside a span
+  originalText.split('').forEach(char => {
     const span = document.createElement('span');
     span.textContent = char;
     button.appendChild(span);
   });
 
+  // Map for multilingual letters per character (English + others in order)
   const languagesMap = [
+    // Fill in the characters as per your previous mappings, total arrays equal to originalText.length
     ["W", "Ｗ", "ウ", "维", "V", "Β", "व", "వ", "வ", "ವ", "𑢾", "墨西哥的"],
     ["a", "ａ", "ア", "啊", "A", "Α", "अ", "అ", "அ", "ಅ", "𑢱", "啊"],
     ["n", "ｎ", "ン", "恩", "N", "Ν", "न", "న", "ந", "ನ", "𑢨", "恩"],
@@ -53,56 +59,39 @@ window.addEventListener('DOMContentLoaded', () => {
     ["?", "？", "？", "？", "?", "?", "?", "?", "?", "?", "?", "?"]
   ];
 
-  const spans = button.querySelectorAll('span');
-  let intervalId;
   let langIndex = 0;
-  let paused = false;
+  let intervalId;
 
+  // Start cycling multilingual text on hover
   button.addEventListener('mouseenter', () => {
-    if (paused) return;
+    if (intervalId) return; // prevent multiple intervals
     intervalId = setInterval(() => {
       langIndex = (langIndex + 1) % languagesMap[0].length;
-      spans.forEach((span, i) => {
-        span.textContent = languagesMap[i][langIndex];
+      const spans = button.querySelectorAll('span');
+      spans.forEach((span, index) => {
+        span.textContent = languagesMap[index][langIndex];
       });
-    }, 200);
+    }, 300); // speed of cycling in ms
   });
 
+  // Stop cycling and revert to English on mouse leave
   button.addEventListener('mouseleave', () => {
-    if (!paused) {
-      clearInterval(intervalId);
-      spans.forEach((span, i) => {
-        span.textContent = languagesMap[i][0];
-      });
-    }
+    clearInterval(intervalId);
+    intervalId = null;
+    const spans = button.querySelectorAll('span');
+    spans.forEach((span, index) => {
+      span.textContent = languagesMap[index][0];
+    });
   });
 
+  // Navigate to choice page on click
   button.addEventListener('click', () => {
-    paused = !paused;
-    if (paused) {
-      clearInterval(intervalId);
-    } else {
-      langIndex = 0;
-      spans.forEach((span, i) => {
-        span.textContent = languagesMap[i][0];
-      });
-    }
+    window.location.href = 'choicepage.html';
   });
 
-  button.addEventListener('touchstart', () => {
-    paused = !paused;
-    if (paused) {
-      clearInterval(intervalId);
-    } else {
-      langIndex = 0;
-      spans.forEach((span, i) => {
-        span.textContent = languagesMap[i][0];
-      });
-    }
+  // Initialize button text spans with English on load
+  const spans = button.querySelectorAll('span');
+  spans.forEach((span, index) => {
+    span.textContent = languagesMap[index][0];
   });
 });
-
-// Example navigation function (optional)
-function goToJourney() {
-  window.location.href = "choicepage.html";
-}
