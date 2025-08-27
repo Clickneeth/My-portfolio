@@ -68,7 +68,7 @@ function onOptionClick(option) {
       animateButtonLetters(portraitsBtn, languagesMapPortraits);
       // Navigate to exact file after animation
       setTimeout(() => {
-        window.location.href = "Portrats.html"; // filename from your repo screenshot (note the spelling)
+        window.location.href = "Potraits.html"; // filename from your repo screenshot (note the spelling)
       }, 1200);
     } else {
       clearInterval(portraitsBtn._intervalId);

@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     span.textContent = char;
     button.appendChild(span);
   });
+  // console.log(document.getElementById('journey-btn').textContent)
 
   // Map for multilingual letters per character (English + others in order)
   const languagesMap = [
