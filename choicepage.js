@@ -68,12 +68,22 @@ function onOptionClick(option) {
       animateButtonLetters(portraitsBtn, languagesMapPortraits);
       // Navigate to exact file after animation
       setTimeout(() => {
+        clearInterval(portraitsBtn._intervalId);
+        clearInterval(landscapesBtn._intervalId);
+        portraitsBtn.disabled = false;
+        landscapesBtn.disabled = false;
+        portraitsBtn.innerHTML = "Potraits";
         window.location.href = "Potraits.html"; // filename from your repo screenshot (note the spelling)
       }, 1200);
     } else {
       clearInterval(portraitsBtn._intervalId);
       animateButtonLetters(landscapesBtn, languagesMapLandscapes);
       setTimeout(() => {
+        clearInterval(landscapesBtn._intervalId);
+      clearInterval(portraitsBtn._intervalId);
+        portraitsBtn.disabled = false;
+        landscapesBtn.disabled = false;
+        landscapesBtn.innerHTML = "Landscape";
         window.location.href = "Landscape.html"; // filename exact match from repo
       }, 1200);
     }
