@@ -23,10 +23,9 @@
       text-align: center;
     }
 
-    /* New wrapper for grid */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       width: 90%;
       max-width: 2000px;
@@ -36,6 +35,7 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.08);
       border-radius: 10px;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .photo-container img {
@@ -50,43 +50,83 @@
     }
   </style>
 </head>
+
 <body>
+
   <h1>Landscapes Gallery</h1>
 
   <div class="gallery">
     <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/1.jpeg" alt="Image 1" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/2.jpeg" alt="Image 2" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/3.jpeg" alt="Image 3" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/4.jpeg" alt="Image 4" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/5.jpeg" alt="Image 5" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/6.jpeg" alt="Image 6" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/7.jpeg" alt="Image 7" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/8.jpeg" alt="Image 8" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/9.jpeg" alt="Image 9" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/10.jpeg" alt="Image 10" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/11.jpeg" alt="Image 11" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/12.jpeg" alt="Image 12" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/13.jpeg" alt="Image 13" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/14.jpeg" alt="Image 14" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/15.jpeg" alt="Image 15" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/16.jpeg" alt="Image 16" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/17.jpg" alt="Image 17" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/18.jpg" alt="Image 18" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/19.jpg" alt="Image 19" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/20.jpg" alt="Image 20" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/21.jpg" alt="Image 21" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/22.jpeg" alt="Image 22" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/23.jpeg" alt="Image 23" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/24.jpeg" alt="Image 24" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/25.jpeg" alt="Image 25" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/26.jpeg" alt="Image 26" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/27.jpeg" alt="Image 27" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/29.jpeg" alt="Image 29" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/30.jpeg" alt="Image 30" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/31.jpg" alt="Image 31" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/32.jpg" alt="Image 32" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/33.jpg" alt="Image 33" /></div>
-<div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/34.jpg" alt="Image 34" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/2.jpeg" alt="Image 2" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/3.jpeg" alt="Image 3" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/4.jpeg" alt="Image 4" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/5.jpeg" alt="Image 5" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/6.jpeg" alt="Image 6" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/7.jpeg" alt="Image 7" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/8.jpeg" alt="Image 8" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/9.jpeg" alt="Image 9" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/10.jpeg" alt="Image 10" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/11.jpeg" alt="Image 11" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/12.jpeg" alt="Image 12" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/13.jpeg" alt="Image 13" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/14.jpeg" alt="Image 14" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/15.jpeg" alt="Image 15" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/16.jpeg" alt="Image 16" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/17.jpg" alt="Image 17" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/18.jpg" alt="Image 18" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/19.jpg" alt="Image 19" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/20.jpg" alt="Image 20" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/21.jpg" alt="Image 21" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/22.jpeg" alt="Image 22" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/23.jpeg" alt="Image 23" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/24.jpeg" alt="Image 24" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/25.jpeg" alt="Image 25" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/26.jpeg" alt="Image 26" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/27.jpeg" alt="Image 27" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/29.jpeg" alt="Image 29" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/30.jpeg" alt="Image 30" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/31.jpg" alt="Image 31" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/32.jpg" alt="Image 32" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/33.jpg" alt="Image 33" /></div>
+    <div class="photo-container"><img src="https://media.githubusercontent.com/media/Clickneeth/My-portfolio/main/landscape/34.jpg" alt="Image 34" /></div>
   </div>
+
+  <script>
+    document.querySelectorAll('.photo-container img').forEach(img => {
+      img.addEventListener('click', function() {
+
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.background = 'rgba(0, 0, 0, 0.85)';
+        overlay.style.display = 'flex';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.zIndex = '9999';
+        overlay.style.cursor = 'zoom-out';
+        overlay.style.padding = '20px';
+        overlay.style.boxSizing = 'border-box';
+
+        overlay.addEventListener('click', () => {
+          document.body.removeChild(overlay);
+        });
+
+        const largeImg = document.createElement('img');
+        largeImg.src = this.src;
+        largeImg.style.maxWidth = '100%';
+        largeImg.style.maxHeight = '100%';
+        largeImg.style.borderRadius = '10px';
+        largeImg.style.boxShadow = '0 0 25px rgba(255, 255, 255, 0.6)';
+        largeImg.style.objectFit = 'contain';
+
+        overlay.appendChild(largeImg);
+        document.body.appendChild(overlay);
+      });
+    });
+  </script>
+
 </body>
 </html>
